@@ -3,13 +3,15 @@ import express from 'express';
 import "express-async-errors";
 import { router } from './routes';
 import mongoose from 'mongoose';
-import dotenv from 'dotenv'
+import dotenv from 'dotenv';
 
 // createConnection();
 const app = express();
+const cors = require("cors");
 
 app.use(express.json());
 app.use(router);
+app.use(cors());
 
 dotenv.config()
 const connectionString = process.env.DB_CONNECTION
