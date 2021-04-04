@@ -4,10 +4,11 @@
   "main": "app.ts",
   "license": "MIT",
   "scripts": {
-    "start": "ts-node-dev --transpile-only --ignore-watch node_modules src/server.ts",
+    "dev": "ts-node-dev --transpile-only --ignore-watch node_modules src/server.ts",
     "typeorm": "ts-node-dev node_modules/typeorm/cli.js",
     "test": "set NODE_ENV=test&&jest  -i",
-    "posttest": "rimraf ./src/database/database.test.sqlite"
+    "posttest": "rimraf ./src/database/database.test.sqlite",
+    "start": "node server.ts"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
